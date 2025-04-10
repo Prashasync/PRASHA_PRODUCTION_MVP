@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mvp-app
+  labels:
+    app: mvp-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mvp-app
+  template:
+    metadata:
+      labels:
+        app: mvp-app
+    spec:
+      containers:
+      - name: mvp-app
+        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/patient_management_ui:latest
+        ports:
+        - containerPort: 3000
+...
