@@ -2,6 +2,8 @@ pipeline {
     agent any
     
     
+    
+    stages {
         
         stage('4. Install npm') {
             steps {
@@ -9,7 +11,6 @@ pipeline {
             }
         }
         
-
         
         stage('6. Build Docker Image') {
             steps {
