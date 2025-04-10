@@ -2,22 +2,197 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mvp-app
+  name: service-1
   labels:
-    app: mvp-app
+    app: service-1
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mvp-app
+      app: service-1
   template:
     metadata:
       labels:
-        app: mvp-app
+        app: service-1
     spec:
       containers:
-      - name: mvp-app
-        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/patient_management_ui:latest
+      - name: service-1
+        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/service-1:latest
         ports:
         - containerPort: 3000
-...
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-2
+  labels:
+    app: service-2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-2
+  template:
+    metadata:
+      labels:
+        app: service-2
+    spec:
+      containers:
+      - name: service-2
+        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/service-2:latest
+        ports:
+        - containerPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-3
+  labels:
+    app: service-3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-3
+  template:
+    metadata:
+      labels:
+        app: service-3
+    spec:
+      containers:
+      - name: service-3
+        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/service-3:latest
+        ports:
+        - containerPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-4
+  labels:
+    app: service-4
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-4
+  template:
+    metadata:
+      labels:
+        app: service-4
+    spec:
+      containers:
+      - name: service-4
+        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/service-4:latest
+        ports:
+        - containerPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-5
+  labels:
+    app: service-5
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-5
+  template:
+    metadata:
+      labels:
+        app: service-5
+    spec:
+      containers:
+      - name: service-5
+        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/service-5:latest
+        ports:
+        - containerPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-6
+  labels:
+    app: service-6
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-6
+  template:
+    metadata:
+      labels:
+        app: service-6
+    spec:
+      containers:
+      - name: service-6
+        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/service-6:latest
+        ports:
+        - containerPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-7
+  labels:
+    app: service-7
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-7
+  template:
+    metadata:
+      labels:
+        app: service-7
+    spec:
+      containers:
+      - name: service-7
+        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/service-7:latest
+        ports:
+        - containerPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-8
+  labels:
+    app: service-8
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-8
+  template:
+    metadata:
+      labels:
+        app: service-8
+    spec:
+      containers:
+      - name: service-8
+        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/service-8:latest
+        ports:
+        - containerPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-9
+  labels:
+    app: service-9
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-9
+  template:
+    metadata:
+      labels:
+        app: service-9
+    spec:
+      containers:
+      - name: service-9
+        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/service-9:latest
+        ports:
+        - containerPort: 3000
