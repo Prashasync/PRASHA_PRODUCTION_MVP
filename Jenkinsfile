@@ -1,61 +1,15 @@
 pipeline {
     agent any
     
-    parameters {
-        string(name: 'ECR_REPO_NAME', defaultValue: 'patient_management_ui', description: 'Enter repository name')
-        string(name: 'AWS_ACCOUNT_ID', defaultValue: '463470954735', description: 'Enter AWS Account ID')
-    }
-    
-    tools {
-        jdk 'JDK'
-        nodejs 'Node18'
-    }
-    
-    environment {
-        SCANNER_HOME = tool 'SonarQube Scanner'
-        PYTHON = '/usr/bin/python3' // Reference the installed Python executable directly
-        PIP = '/usr/bin/pip3'        // Reference pip3 directly
-    }
-    
     stages {
-        stage('1. Git Checkout') {
-            steps {
-                git branch: 'main', url: 'https://github.com/Prashasync/Patient_Management_UI-UX.git'
-            }
-        }
         
-        
-        stage('2. SonarQube Analysis') {
-            steps {
-                withSonarQubeEnv ('sonar-server') {
-                    sh """
-                    $SCANNER_HOME/bin/sonar-scanner \
-                    -Dsonar.projectName=Patient_Management_UI \
-                    -Dsonar.projectKey=Patient_Management_UI
-                    """
-                }
-            }
-        }
-        
-        stage('4. Install npm') {
-            steps {
-                sh "npm install"
-            }
-        }
-        
-        stage('5. Trivy Scan') {
-            steps {
-                sh "trivy fs . > trivy.txt"
-            }
-        }
-        
-        stage('6. Build Docker Image') {
+        stage('1. Build Docker Image') {
             steps {
                 sh "docker build -t ${params.ECR_REPO_NAME} ."
             }
         }
         
-        stage('7. Create ECR repo') {
+        stage('2. Create ECR repo') {
             steps {
                 withCredentials([string(credentialsId: 'access-key', variable: 'AWS_ACCESS_KEY'), 
                                  string(credentialsId: 'secret-key', variable: 'AWS_SECRET_KEY')]) {
@@ -69,7 +23,7 @@ pipeline {
             }
         }
         
-        stage('8. Login to ECR & tag image') {
+        stage('3. Login to ECR & tag image') {
             steps {
                 withCredentials([string(credentialsId: 'access-key', variable: 'AWS_ACCESS_KEY'), 
                                  string(credentialsId: 'secret-key', variable: 'AWS_SECRET_KEY')]) {
@@ -82,7 +36,7 @@ pipeline {
             }
         }
         
-        stage('9. Push image to ECR') {
+        stage('4. Push image to ECR') {
             steps {
                 withCredentials([string(credentialsId: 'access-key', variable: 'AWS_ACCESS_KEY'), 
                                  string(credentialsId: 'secret-key', variable: 'AWS_SECRET_KEY')]) {
@@ -94,7 +48,7 @@ pipeline {
             }
         }
         
-        stage('10. Cleanup Images') {
+        stage('5. Cleanup Images') {
             steps {
                 sh """
                 docker rmi ${params.AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/${params.ECR_REPO_NAME}:${BUILD_NUMBER}
