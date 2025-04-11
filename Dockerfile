@@ -13,9 +13,6 @@ RUN npm install
 # Copy the entire codebase to the working directory
 COPY . /app/
 
-# Build the application (for production-ready builds)
-RUN npm run build
-
 # Expose the port your container app will run on
 EXPOSE 3000    
 
