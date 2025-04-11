@@ -1,0 +1,75 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: all-services-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: your-domain.com
+    http:
+      paths:
+      - path: /service-1
+        pathType: Prefix
+        backend:
+          service:
+            name: service-1
+            port:
+              number: 3001
+      - path: /service-2
+        pathType: Prefix
+        backend:
+          service:
+            name: service-2
+            port:
+              number: 3002
+      - path: /service-3
+        pathType: Prefix
+        backend:
+          service:
+            name: service-3
+            port:
+              number: 3003
+      - path: /service-4
+        pathType: Prefix
+        backend:
+          service:
+            name: service-4
+            port:
+              number: 3004
+      - path: /service-5
+        pathType: Prefix
+        backend:
+          service:
+            name: service-5
+            port:
+              number: 3005
+      - path: /service-6
+        pathType: Prefix
+        backend:
+          service:
+            name: service-6
+            port:
+              number: 3006
+      - path: /service-7
+        pathType: Prefix
+        backend:
+          service:
+            name: service-7
+            port:
+              number: 3007
+      - path: /service-8
+        pathType: Prefix
+        backend:
+          service:
+            name: service-8
+            port:
+              number: 3008
+      - path: /service-9
+        pathType: Prefix
+        backend:
+          service:
+            name: service-9
+            port:
+              number: 3009
