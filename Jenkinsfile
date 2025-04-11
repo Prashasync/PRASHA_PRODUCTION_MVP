@@ -18,11 +18,6 @@ pipeline {
     }
     
     stages {
-        stage('1. Git Checkout') {
-            steps {
-                git branch: 'main', url: 'https://github.com/Prashasync/Patient_Management_UI-UX.git'
-            }
-        }
         
         
         stage('2. SonarQube Analysis') {
