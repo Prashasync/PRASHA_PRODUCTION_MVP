@@ -4,11 +4,11 @@
   "description": "Prasha backend authentication-service",
   "main": "app.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",       // ✅ This is what's missing
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
+  "start": "node app.js", // Start the backend service
+  "build": "echo 'No build step required for backend service'", //for build
+  "test": "npm test",
+  "eject": "react-scripts eject"
+},
   "author": "sainadh",
   "license": "ISC",
   "dependencies": {
