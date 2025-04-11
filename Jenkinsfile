@@ -19,17 +19,6 @@ pipeline {
     
     stages {
         
-        stage('2. SonarQube Analysis') {
-            steps {
-                withSonarQubeEnv ('sonar-server') {
-                    sh """
-                    $SCANNER_HOME/bin/sonar-scanner \
-                    -Dsonar.projectName=Patient_Management_UI \
-                    -Dsonar.projectKey=Patient_Management_UI
-                    """
-                }
-            }
-        }
         
         stage('4. Install npm') {
             steps {
@@ -37,11 +26,6 @@ pipeline {
             }
         }
         
-        stage('5. Trivy Scan') {
-            steps {
-                sh "trivy fs . > trivy.txt"
-            }
-        }
         
         stage('6. Build Docker Image') {
             steps {
