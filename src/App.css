@@ -1,0 +1,29 @@
+ .calendar-header {
+  display: flex;
+  justify-content: space-between; /* Space out the buttons */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.prev-button,
+.next-button {
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  transition: background-color 0.3s;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  background-color: #ddd;
+}
+
+.calendar-header h2 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+ 

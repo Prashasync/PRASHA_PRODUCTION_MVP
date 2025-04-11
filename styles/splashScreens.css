@@ -1,0 +1,43 @@
+.splash-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f4f8;
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.splash1 h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.splash2 .animation {
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.splash3 button {
+  background-color: #6c5ce7;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+}

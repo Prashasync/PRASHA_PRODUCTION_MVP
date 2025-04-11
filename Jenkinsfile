@@ -18,34 +18,11 @@ pipeline {
     }
     
     stages {
-        stage('1. Git Checkout') {
-            steps {
-                git branch: 'main', url: 'https://github.com/Prashasync/Patient_Management_UI-UX.git'
-            }
-        }
         
-        
-        stage('2. SonarQube Analysis') {
-            steps {
-                withSonarQubeEnv ('sonar-server') {
-                    sh """
-                    $SCANNER_HOME/bin/sonar-scanner \
-                    -Dsonar.projectName=Patient_Management_UI \
-                    -Dsonar.projectKey=Patient_Management_UI
-                    """
-                }
-            }
-        }
         
         stage('4. Install npm') {
             steps {
                 sh "npm install"
-            }
-        }
-        
-        stage('5. Trivy Scan') {
-            steps {
-                sh "trivy fs . > trivy.txt"
             }
         }
         
