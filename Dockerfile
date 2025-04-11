@@ -13,8 +13,11 @@ RUN npm install
 # Copy the entire codebase to the working directory
 COPY . /app/
 
-# Expose the port your container app
+# Build the application (for production-ready builds)
+RUN npm run build
+
+# Expose the port your container app will run on
 EXPOSE 3000    
 
-# Define the command to start your application (replace "start" with the actual command to start your app)
+# Define the command to start your application
 CMD ["npm", "start"]
