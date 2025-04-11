@@ -105,7 +105,7 @@ spec:
     spec:
       containers:
       - name: ai-ml-analytics-python
-        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/patient_management_ui:latest
+        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/ai_ml
         ports:
         - containerPort: 3000
 ---
