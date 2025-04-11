@@ -4,8 +4,10 @@
   "description": "Prasha backend authentication-service",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js --inspect"
+    "start": "react-scripts start",
+  "build": "react-scripts build",       // ✅ This is what's missing
+  "test": "react-scripts test",
+  "eject": "react-scripts eject"
   },
   "author": "sainadh",
   "license": "ISC",
