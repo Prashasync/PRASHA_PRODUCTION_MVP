@@ -2,21 +2,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: service-1
+  name: main
   labels:
-    app: service-1
+    app: main
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: service-1
+      app: main
   template:
     metadata:
       labels:
-        app: service-1
+        app: main
     spec:
       containers:
-      - name: service-1
+      - name: main
         image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/patient_management_ui:latest
         ports:
         - containerPort: 3000
@@ -24,21 +24,21 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: service-2
+  name: appointment-services
   labels:
-    app: service-2
+    app: appointment-services
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: service-2
+      app: appointment-services
   template:
     metadata:
       labels:
-        app: service-2
+        app: appointment-services
     spec:
       containers:
-      - name: service-2
+      - name: appointment-services
         image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/patient_management_ui:latest
         ports:
         - containerPort: 3000
@@ -46,21 +46,21 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: service-3
+  name: authentication-services
   labels:
-    app: service-3
+    app: authentication-services
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: service-3
+      app: authentication-services
   template:
     metadata:
       labels:
-        app: service-3
+        app: authentication-services
     spec:
       containers:
-      - name: service-3
+      - name: authentication-services
         image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/patient_management_ui:latest
         ports:
         - containerPort: 3000
@@ -68,21 +68,21 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: service-4
+  name: chat-services
   labels:
-    app: service-4
+    app: chat-services
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: service-4
+      app: chat-services
   template:
     metadata:
       labels:
-        app: service-4
+        app: chat-services
     spec:
       containers:
-      - name: service-4
+      - name: chat-services
         image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/patient_management_ui:latest
         ports:
         - containerPort: 3000
@@ -90,21 +90,21 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: service-5
+  name: ai-ml-analytics-python
   labels:
-    app: service-5
+    app: ai-ml-analytics-python
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: service-5
+      app: ai-ml-analytics-python
   template:
     metadata:
       labels:
-        app: service-5
+        app: ai-ml-analytics-python
     spec:
       containers:
-      - name: service-5
+      - name: ai-ml-analytics-python
         image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/patient_management_ui:latest
         ports:
         - containerPort: 3000
@@ -112,43 +112,21 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: service-6
+  name: notification-services-ms
   labels:
-    app: service-6
+    app: notification-services-ms
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: service-6
+      app: notification-services-ms
   template:
     metadata:
       labels:
-        app: service-6
+        app: notification-services-ms
     spec:
       containers:
-      - name: service-6
-        image: 4463470954735.dkr.ecr.us-east-1.amazonaws.com/patient_management_ui:latest
-        ports:
-        - containerPort: 3000
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: service-7
-  labels:
-    app: service-7
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: service-7
-  template:
-    metadata:
-      labels:
-        app: service-7
-    spec:
-      containers:
-      - name: service-7
+      - name: notification-services-ms
         image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/patient_management_ui:latest
         ports:
         - containerPort: 3000
@@ -156,21 +134,21 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: service-8
+  name: patient-services-ms
   labels:
-    app: service-8
+    app: patient-services-ms
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: service-8
+      app: patient-services-ms
   template:
     metadata:
       labels:
-        app: service-8
+        app: patient-services-ms
     spec:
       containers:
-      - name: service-8
+      - name: patient-services-ms
         image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/patient_management_ui:latest
         ports:
         - containerPort: 3000
@@ -178,21 +156,21 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: service-9
+  name: physician-management-ui-ux
   labels:
-    app: service-9
+    app: physician-management-ui-ux
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: service-9
+      app: physician-management-ui-ux
   template:
     metadata:
       labels:
-        app: service-9
+        app: physician-management-ui-ux
     spec:
       containers:
-      - name: service-9
+      - name: physician-management-ui-ux
         image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/patient_management_ui:latest
         ports:
         - containerPort: 3000

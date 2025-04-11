@@ -10,66 +10,59 @@ spec:
   - host: your-domain.com
     http:
       paths:
-      - path: /service-1
+      - path: /main
         pathType: Prefix
         backend:
           service:
-            name: service-1
+            name: main
             port:
               number: 3001
-      - path: /service-2
+      - path: /appointment-services
         pathType: Prefix
         backend:
           service:
-            name: service-2
+            name: appointment-services
             port:
               number: 3002
-      - path: /service-3
+      - path: /authentication-services
         pathType: Prefix
         backend:
           service:
-            name: service-3
+            name: authentication-services
             port:
               number: 3003
-      - path: /service-4
+      - path: /chat-services
         pathType: Prefix
         backend:
           service:
-            name: service-4
+            name: chat-services
             port:
               number: 3004
-      - path: /service-5
+      - path: /ai-ml-analytics-python
         pathType: Prefix
         backend:
           service:
-            name: service-5
+            name: ai-ml-analytics-python
             port:
               number: 3005
-      - path: /service-6
+      - path: /notification-services-ms
         pathType: Prefix
         backend:
           service:
-            name: service-6
+            name: notification-services-ms
             port:
               number: 3006
-      - path: /service-7
+      - path: /patient-services-ms
         pathType: Prefix
         backend:
           service:
-            name: service-7
+            name: patient-services-ms
             port:
               number: 3007
-      - path: /service-8
+      - path: /physician-management-ui-ux
         pathType: Prefix
         backend:
           service:
-            name: service-8
+            name: physician-management-ui-ux
             port:
               number: 3008
-      - path: /service-9
-        pathType: Prefix
-        backend:
-          service:
-            name: service-9
-            port:
-              number: 3009
