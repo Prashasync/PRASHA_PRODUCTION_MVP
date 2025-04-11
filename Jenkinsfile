@@ -16,13 +16,8 @@ pipeline {
     }
     
     stages {
-        stage('1. Git Checkout') {
-            steps {
-                git branch: 'main', url: 'https://github.com/Prashasync/Dev.git'
-            }
-        }
         
-        stage('2. SonarQube Analysis') {
+        stage('SonarQube Analysis') {
     steps {
         withSonarQubeEnv('sonar-server') {
             script {
@@ -52,7 +47,7 @@ pipeline {
         }
         */
         
-            stage('4. Install Python Dependencies') {
+            stage('Install Python Dependencies') {
             steps {
                 script {
                     echo 'Setting up Python virtual environment & installing dependencies'
@@ -66,7 +61,7 @@ pipeline {
         }
     }
 
-        stage('5. Run Tests') {
+        stage('Run Tests') {
             steps {
                 script {
                     echo 'Checking if tests exist'
@@ -114,7 +109,7 @@ pipeline {
 
 
         
-        stage('7. Trivy Scan') {
+        stage('Trivy Scan') {
     steps {
         script {
             echo "Running Trivy vulnerability scan on Python dependencies"
@@ -135,13 +130,13 @@ pipeline {
         }
 
         
-        stage('8. Build Docker Image') {
+        stage('Build Docker Image') {
             steps {
                 sh "docker build -t ${params.ECR_REPO_NAME} ."
             }
         }
 
-        stage('9. Create ECR repo') {
+        stage('Create ECR repo') {
             steps {
                 withCredentials([string(credentialsId: 'access-key', variable: 'AWS_ACCESS_KEY'), 
                                  string(credentialsId: 'secret-key', variable: 'AWS_SECRET_KEY')]) {
@@ -155,7 +150,7 @@ pipeline {
             }
         }
         
-        stage('10. Login to ECR & tag image') {
+        stage('Login to ECR & tag image') {
             steps {
                 withCredentials([string(credentialsId: 'access-key', variable: 'AWS_ACCESS_KEY'), 
                                  string(credentialsId: 'secret-key', variable: 'AWS_SECRET_KEY')]) {
@@ -168,7 +163,7 @@ pipeline {
             }
         }
         
-        stage('11. Push image to ECR') {
+        stage('Push image to ECR') {
             steps {
                 withCredentials([string(credentialsId: 'access-key', variable: 'AWS_ACCESS_KEY'), 
                                  string(credentialsId: 'secret-key', variable: 'AWS_SECRET_KEY')]) {
@@ -180,7 +175,7 @@ pipeline {
             }
         }
         
-        stage('12. Cleanup Images') {
+        stage('Cleanup Images') {
             steps {
                 sh """
                 docker rmi ${params.AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/${params.ECR_REPO_NAME}:${BUILD_NUMBER}
