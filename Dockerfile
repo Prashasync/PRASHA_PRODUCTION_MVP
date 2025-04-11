@@ -1,20 +1,23 @@
-# Use Node.js Alpine base image
-FROM node:alpine
+# Use a lightweight Node.js base image
+FROM node:18-alpine
 
-# Create and set the working directory inside the container
+# Set working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json to the working directory
-COPY package.json package-lock.json /app/
+# Copy dependency files first for optimized caching
+COPY package.json package-lock.json ./
 
 # Install dependencies
 RUN npm install
 
-# Copy the entire codebase to the working directory
-COPY . /app/
+# Copy the rest of the application (includes /src, /public, etc.)
+COPY . .
 
-# Expose the port your container app will run on
-EXPOSE 3000    
+# Build the app for production (optional: if you're using `npm start`, this may not be needed)
+RUN npm run build
 
-# Define the command to start your application
+# Expose the port the app runs on
+EXPOSE 3000
+
+# Start the application
 CMD ["npm", "start"]
