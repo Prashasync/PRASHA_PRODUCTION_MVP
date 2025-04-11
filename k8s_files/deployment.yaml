@@ -39,7 +39,7 @@ spec:
     spec:
       containers:
       - name: service-2
-        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/service-2:latest
+        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/patient_management_ui:latest
         ports:
         - containerPort: 3000
 ---
@@ -61,7 +61,7 @@ spec:
     spec:
       containers:
       - name: service-3
-        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/service-3:latest
+        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/patient_management_ui:latest
         ports:
         - containerPort: 3000
 ---
@@ -83,7 +83,7 @@ spec:
     spec:
       containers:
       - name: service-4
-        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/service-4:latest
+        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/patient_management_ui:latest
         ports:
         - containerPort: 3000
 ---
@@ -105,7 +105,7 @@ spec:
     spec:
       containers:
       - name: service-5
-        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/service-5:latest
+        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/patient_management_ui:latest
         ports:
         - containerPort: 3000
 ---
@@ -127,7 +127,7 @@ spec:
     spec:
       containers:
       - name: service-6
-        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/service-6:latest
+        image: 4463470954735.dkr.ecr.us-east-1.amazonaws.com/patient_management_ui:latest
         ports:
         - containerPort: 3000
 ---
@@ -149,7 +149,7 @@ spec:
     spec:
       containers:
       - name: service-7
-        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/service-7:latest
+        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/patient_management_ui:latest
         ports:
         - containerPort: 3000
 ---
@@ -171,7 +171,7 @@ spec:
     spec:
       containers:
       - name: service-8
-        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/service-8:latest
+        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/patient_management_ui:latest
         ports:
         - containerPort: 3000
 ---
@@ -193,6 +193,6 @@ spec:
     spec:
       containers:
       - name: service-9
-        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/service-9:latest
+        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/patient_management_ui:latest
         ports:
         - containerPort: 3000
