@@ -17,52 +17,5 @@ spec:
             name: main
             port:
               number: 3001
-      - path: /appointment-services
-        pathType: Prefix
-        backend:
-          service:
-            name: appointment-services
-            port:
-              number: 3002
-      - path: /authentication-services
-        pathType: Prefix
-        backend:
-          service:
-            name: authentication-services
-            port:
-              number: 3003
-      - path: /chat-services
-        pathType: Prefix
-        backend:
-          service:
-            name: chat-services
-            port:
-              number: 3004
-      - path: /ai-ml-analytics-python
-        pathType: Prefix
-        backend:
-          service:
-            name: ai-ml-analytics-python
-            port:
-              number: 3005
-      - path: /notification-services-ms
-        pathType: Prefix
-        backend:
-          service:
-            name: notification-services-ms
-            port:
-              number: 3006
-      - path: /patient-services-ms
-        pathType: Prefix
-        backend:
-          service:
-            name: patient-services-ms
-            port:
-              number: 3007
-      - path: /physician-management-ui-ux
-        pathType: Prefix
-        backend:
-          service:
-            name: physician-management-ui-ux
-            port:
-              number: 3008
+      
+      
