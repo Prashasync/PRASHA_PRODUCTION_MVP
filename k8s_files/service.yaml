@@ -127,3 +127,18 @@ spec:
     app: service-8
   type: LoadBalancer
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-9
+  labels:
+    app: service-9
+spec:
+  ports:
+  - name: http
+    port: 3000
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: service-9
+  type: LoadBalancer
