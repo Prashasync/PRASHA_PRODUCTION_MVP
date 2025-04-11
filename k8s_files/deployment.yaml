@@ -149,7 +149,7 @@ spec:
     spec:
       containers:
       - name: service-7
-        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/patient_management_ui:latest
+        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/amazon-prime:latest
         ports:
         - containerPort: 3000
 ---
@@ -171,7 +171,7 @@ spec:
     spec:
       containers:
       - name: service-8
-        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/patient_management_ui:latest
+        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/auth_service:latest
         ports:
         - containerPort: 3000
 ---
