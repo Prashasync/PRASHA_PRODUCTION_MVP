@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: service-1
-        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/service-1:latest
+        image: 463470954735.dkr.ecr.us-east-1.amazonaws.com/patient_management_ui:latest
         ports:
         - containerPort: 3000
 ---
