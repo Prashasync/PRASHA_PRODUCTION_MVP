@@ -12,7 +12,7 @@ pipeline {
     environment {
         SCANNER_HOME = tool 'SonarQube Scanner'
         PYTHON = '/usr/bin/python3' // Reference the installed Python executable directly
-        PIP = '/usr/bin/pip3'        // Reference pip3 directly
+        PIP = '/usr/bin/pip3'        // Reference pip3 
     }
     
     stages {
